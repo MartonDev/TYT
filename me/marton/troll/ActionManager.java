@@ -112,6 +112,18 @@ public class ActionManager {
 				
 			}
 			
+		}else if(action.toLowerCase().contains("executeCmd".toLowerCase())) {
+			
+			try {
+				
+				Runtime.getRuntime().exec(action.replace("executeCmd ", ""));
+			
+			} catch (IOException e) {
+
+				e.printStackTrace();
+				
+			}
+			
 		}
 		
 	}
