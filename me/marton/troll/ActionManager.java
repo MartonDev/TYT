@@ -67,8 +67,8 @@ public class ActionManager {
 	    
 	    Timer timer = new Timer("Timer");
 	     
-	    long delay  = 300L;
-	    long period = 300L;
+	    long delay  = 1000L;
+	    long period = 1000L;
 	    timer.scheduleAtFixedRate(repeatedTask, delay, period);
 		
 	}
@@ -87,6 +87,20 @@ public class ActionManager {
 			
 			System.out.println("Opening chrome...");
 			utils.openChrome(action.replace("openChrome ", ""));
+			
+		}else if(action.toLowerCase().contains("closeApp".toLowerCase())) {
+			
+			Runtime rt = Runtime.getRuntime();
+
+			try {
+				
+				rt.exec("taskkill /F /IM " + action.replace("closeApp ", ""));
+				
+			} catch (IOException e) {
+
+				e.printStackTrace();
+				
+			}
 			
 		}else if(action.toLowerCase().contains("openDesktopApp".toLowerCase())) {
 			
