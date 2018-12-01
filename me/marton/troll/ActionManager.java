@@ -138,6 +138,14 @@ public class ActionManager {
 				
 			}
 			
+		}else if(action.toLowerCase().contains("mouseClick".toLowerCase())) {
+			
+			utils.mouseClick();
+			
+		}else if(action.toLowerCase().contains("stop".toLowerCase())) {
+			
+			System.exit(0);
+			
 		}
 		
 	}

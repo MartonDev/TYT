@@ -4,6 +4,7 @@ import java.awt.AWTException;
 import java.awt.Dimension;
 import java.awt.Robot;
 import java.awt.Toolkit;
+import java.awt.event.InputEvent;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -29,6 +30,23 @@ public class Utils {
 			
 		}
 		
+	}
+	
+	public void mouseClick() {
+		
+		try {
+			
+			Robot robot = new Robot();
+			
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+			
+		} catch (AWTException e) {
+
+			e.printStackTrace();
+			
+		}
+			
 	}
 	
 	public void mouseTroll(Long delay) {
